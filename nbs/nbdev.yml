@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "reverse_tb"
+  site-url: "https://ababino.github.io/reverse_tb"
+  description: "a reverse traceback magic for jupyer notebooks"
+  repo-branch: main
+  repo-url: "https://github.com/ababino/reverse_tb"
