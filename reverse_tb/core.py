@@ -5,9 +5,9 @@ __all__ = ['redirect_jupyter_stderr', 'ReverseTB', 'reverse_tb']
 
 # %% ../nbs/00_core.ipynb 4
 from contextlib import contextmanager
+from typing import Optional
 
 from fastcore.all import *
-from typing import Optional
 from IPython.core.magic import register_cell_magic
 from IPython.core import ultratb
 
@@ -37,6 +37,7 @@ class ReverseTB(ultratb.VerboseTB):
         tb_list = tb_list[-1:]+tb_list[:-1]
         return self.stb2text(tb_list)
 
+# %% ../nbs/00_core.ipynb 7
 @register_cell_magic
 def reverse_tb(line, cell):
     """A cell magic that reverses only the frames of the traceback of an error."""
