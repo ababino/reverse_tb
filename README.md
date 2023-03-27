@@ -38,7 +38,42 @@ def qux():
 foo()
 ```
 
-    Exception: 
+``` python
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+Cell In[2], line 9, in baz()
+      8 try:
+----> 9     qux()
+     10 except KeyError as e:
+
+Cell In[2], line 16, in qux()
+     15 d = {}
+---> 16 return d['key']
+
+KeyError: 'key'
+
+During handling of the above exception, another exception occurred:
+
+Exception                                 Traceback (most recent call last)
+Cell In[3], line 1
+----> 1 foo()
+
+Cell In[2], line 2, in foo()
+      1 def foo():
+----> 2     return bar()
+
+Cell In[2], line 5, in bar()
+      4 def bar():
+----> 5     return baz()
+
+Cell In[2], line 11, in baz()
+      9     qux()
+     10 except KeyError as e:
+---> 11     raise Exception
+     12 return qux()
+
+Exception: 
+```
 
 ``` python
 %%reverse_tb
