@@ -41,41 +41,43 @@ foo()
     Exception: 
 
 ``` python
+%%reverse_tb
 foo()
 ```
 
-    ---------------------------------------------------------------------------
-    Exception: 
-    Cell In[3], line 11, in baz()
-          9     qux()
-         10 except KeyError as e:
-    ---> 11     raise Exception
-         12 return qux()
+``` python
+---------------------------------------------------------------------------
+KeyError                                  Traceback (last call first)
+KeyError: 'key'
+Cell In[2], line 16, in qux()
+     15 d = {}
+---> 16 return d['key']
+        d = {}
 
-    Cell In[3], line 5, in bar()
-          4 def bar():
-    ----> 5     return baz()
+Cell In[2], line 9, in baz()
+      8 try:
+----> 9     qux()
+     10 except KeyError as e:
 
-    Cell In[3], line 2, in foo()
-          1 def foo():
-    ----> 2     return bar()
 
-    Cell In[5], line 1
-    ----> 1 foo()
+During handling of the above exception, another exception occurred:
 
-    Exception                                 Traceback (last call first)
+Exception                                 Traceback (last call first)
+Exception: 
+Cell In[2], line 11, in baz()
+      9     qux()
+     10 except KeyError as e:
+---> 11     raise Exception
+     12 return qux()
 
-    During handling of the above exception, another exception occurred:
+Cell In[2], line 5, in bar()
+      4 def bar():
+----> 5     return baz()
 
-    KeyError: 'key'
-    Cell In[3], line 16, in qux()
-         15 d = {}
-    ---> 16 return d['key']
-            d = {}
+Cell In[2], line 2, in foo()
+      1 def foo():
+----> 2     return bar()
 
-    Cell In[3], line 9, in baz()
-          8 try:
-    ----> 9     qux()
-         10 except KeyError as e:
-
-    KeyError                                  Traceback (last call first)
+Cell In[4], line 1
+----> 1 foo()
+```
