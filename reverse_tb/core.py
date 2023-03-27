@@ -28,13 +28,17 @@ class AutoFormattedReversedTB(ultratb.AutoFormattedTB):
         reversed_tb_list= [x.replace('most recent call last', 'last call first') for x in reversed_tb_list]
         return reversed_tb_list
 
-# %% ../nbs/00_core.ipynb 7
+# %% ../nbs/00_core.ipynb 8
 def reverse_tb_on():
+    '''Turn on reverse tracebacks.'''
     get_ipython().InteractiveTB = AutoFormattedReversedTB(mode='Verbose', color_scheme='Neutral', tb_offset=1)
+
+# %% ../nbs/00_core.ipynb 10
 def reverse_tb_off(): 
+    '''Turn off reverse tracebacks.'''
     get_ipython().InteractiveTB = ultratb.AutoFormattedTB(mode='Verbose', color_scheme='Neutral', tb_offset=1)
 
-# %% ../nbs/00_core.ipynb 9
+# %% ../nbs/00_core.ipynb 13
 @contextmanager
 def reverse_traceback_ctx():
     try:
@@ -43,7 +47,7 @@ def reverse_traceback_ctx():
     finally:
         reverse_tb_off()
 
-# %% ../nbs/00_core.ipynb 10
+# %% ../nbs/00_core.ipynb 14
 @register_cell_magic
 def reverse_tb(line, cell):
     """A cell magic that reverses only the frames of the traceback of an error."""
