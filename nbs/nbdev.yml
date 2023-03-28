@@ -4,6 +4,6 @@ project:
 website:
   title: "reverse_tb"
   site-url: "https://ababino.github.io/reverse_tb"
-  description: "a reverse traceback magic for jupyer notebooks"
+  description: "reverse_tb is a jupyter notebook magic that reverses the order of the traceback, making it easier to see the most relevant information at the top of the cell output."
   repo-branch: main
   repo-url: "https://github.com/ababino/reverse_tb"
