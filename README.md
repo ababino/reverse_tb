@@ -116,3 +116,19 @@ Cell In[2], line 2, in foo()
 Cell In[4], line 1
 ----> 1 foo()
 ```
+
+``` python
+from reverse_tb.on import *
+```
+
+``` python
+reverse_tb_off()
+```
+
+    NameError: name 'reverse_tb_off' is not defined
+
+``` python
+foo()
+```
+
+    Exception: 
