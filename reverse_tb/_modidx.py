@@ -11,4 +11,5 @@ d = { 'settings': { 'branch': 'main',
                                  'reverse_tb.core.reverse_tb': ('core.html#reverse_tb', 'reverse_tb/core.py'),
                                  'reverse_tb.core.reverse_tb_off': ('core.html#reverse_tb_off', 'reverse_tb/core.py'),
                                  'reverse_tb.core.reverse_tb_on': ('core.html#reverse_tb_on', 'reverse_tb/core.py'),
-                                 'reverse_tb.core.reverse_traceback_ctx': ('core.html#reverse_traceback_ctx', 'reverse_tb/core.py')}}}
+                                 'reverse_tb.core.reverse_traceback_ctx': ('core.html#reverse_traceback_ctx', 'reverse_tb/core.py')},
+            'reverse_tb.on': {}}}
