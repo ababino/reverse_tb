@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "reverse_tb",
+    "section": "",
+    "text": "reverse_tb is a jupyter notebook magic that reverses the order of the traceback, making it easier to see the most relevant information at the top of the cell output."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "reverse_tb",
+    "section": "Install",
+    "text": "Install\npip install reverse_tb"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "reverse_tb",
+    "section": "How to use",
+    "text": "How to use\n\nfrom reverse_tb.core import reverse_tb\n\n\ndef foo():\n    return bar()\n\ndef bar():\n    return baz()\n\ndef baz():\n    try:\n        qux()\n    except KeyError as e:\n        raise Exception\n    return qux()\n\ndef qux():\n    d = {}\n    return d['key']\n\nfoo()\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nCell In[2], line 9, in baz()\n      8 try:\n----> 9     qux()\n     10 except KeyError as e:\n\nCell In[2], line 16, in qux()\n     15 d = {}\n---> 16 return d['key']\n\nKeyError: 'key'\n\nDuring handling of the above exception, another exception occurred:\n\nException                                 Traceback (most recent call last)\nCell In[3], line 1\n----> 1 foo()\n\nCell In[2], line 2, in foo()\n      1 def foo():\n----> 2     return bar()\n\nCell In[2], line 5, in bar()\n      4 def bar():\n----> 5     return baz()\n\nCell In[2], line 11, in baz()\n      9     qux()\n     10 except KeyError as e:\n---> 11     raise Exception\n     12 return qux()\n\nException: \n%%reverse_tb\nfoo()\n---------------------------------------------------------------------------\nKeyError                                  Traceback (last call first)\nKeyError: 'key'\nCell In[2], line 16, in qux()\n     15 d = {}\n---> 16 return d['key']\n        d = {}\n\nCell In[2], line 9, in baz()\n      8 try:\n----> 9     qux()\n     10 except KeyError as e:\n\n\nDuring handling of the above exception, another exception occurred:\n\nException                                 Traceback (last call first)\nException: \nCell In[2], line 11, in baz()\n      9     qux()\n     10 except KeyError as e:\n---> 11     raise Exception\n     12 return qux()\n\nCell In[2], line 5, in bar()\n      4 def bar():\n----> 5     return baz()\n\nCell In[2], line 2, in foo()\n      1 def foo():\n----> 2     return bar()\n\nCell In[4], line 1\n----> 1 foo()\nfrom reverse_tb.on import *\nfoo()\n---------------------------------------------------------------------------\nKeyError                                  Traceback (last call first)\nKeyError: 'key'\nCell In[2], line 16, in qux()\n     15 d = {}\n---> 16 return d['key']\n        d = {}\n\nCell In[2], line 9, in baz()\n      8 try:\n----> 9     qux()\n     10 except KeyError as e:\n\n\nDuring handling of the above exception, another exception occurred:\n\nException                                 Traceback (last call first)\nException: \nCell In[2], line 11, in baz()\n      9     qux()\n     10 except KeyError as e:\n---> 11     raise Exception\n     12 return qux()\n\nCell In[2], line 5, in bar()\n      4 def bar():\n----> 5     return baz()\n\nCell In[2], line 2, in foo()\n      1 def foo():\n----> 2     return bar()\n\nCell In[4], line 1\n----> 1 foo()\nreverse_tb_off()\nfoo()\n---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nCell In[2], line 9, in baz()\n      8 try:\n----> 9     qux()\n     10 except KeyError as e:\n\nCell In[2], line 16, in qux()\n     15 d = {}\n---> 16 return d['key']\n\nKeyError: 'key'\n\nDuring handling of the above exception, another exception occurred:\n\nException                                 Traceback (most recent call last)\nCell In[3], line 1\n----> 1 foo()\n\nCell In[2], line 2, in foo()\n      1 def foo():\n----> 2     return bar()\n\nCell In[2], line 5, in bar()\n      4 def bar():\n----> 5     return baz()\n\nCell In[2], line 11, in baz()\n      9     qux()\n     10 except KeyError as e:\n---> 11     raise Exception\n     12 return qux()\n\nException:"
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source"
+  },
+  {
+    "objectID": "core.html#tests",
+    "href": "core.html#tests",
+    "title": "core",
+    "section": "Tests",
+    "text": "Tests\n\ndef foo():\n    return bar()\n\ndef bar():\n    return baz()\n\ndef baz():\n    try:\n        qux()\n    except KeyError as e:\n        raise Exception\n    return qux()\n\ndef qux():\n    d = {}\n    return d['key']\n\n\nfoo()\n\nException: \n\n\n\nfoo()\n\nException:"
+  },
+  {
+    "objectID": "core.html#export",
+    "href": "core.html#export",
+    "title": "core",
+    "section": "Export",
+    "text": "Export"
+  }
+]
