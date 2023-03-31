@@ -119,16 +119,84 @@ Cell In[4], line 1
 
 ``` python
 from reverse_tb.on import *
+foo()
+```
+
+``` python
+---------------------------------------------------------------------------
+KeyError                                  Traceback (last call first)
+KeyError: 'key'
+Cell In[2], line 16, in qux()
+     15 d = {}
+---> 16 return d['key']
+        d = {}
+
+Cell In[2], line 9, in baz()
+      8 try:
+----> 9     qux()
+     10 except KeyError as e:
+
+
+During handling of the above exception, another exception occurred:
+
+Exception                                 Traceback (last call first)
+Exception: 
+Cell In[2], line 11, in baz()
+      9     qux()
+     10 except KeyError as e:
+---> 11     raise Exception
+     12 return qux()
+
+Cell In[2], line 5, in bar()
+      4 def bar():
+----> 5     return baz()
+
+Cell In[2], line 2, in foo()
+      1 def foo():
+----> 2     return bar()
+
+Cell In[4], line 1
+----> 1 foo()
 ```
 
 ``` python
 reverse_tb_off()
-```
-
-    NameError: name 'reverse_tb_off' is not defined
-
-``` python
 foo()
 ```
 
-    Exception: 
+``` python
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+Cell In[2], line 9, in baz()
+      8 try:
+----> 9     qux()
+     10 except KeyError as e:
+
+Cell In[2], line 16, in qux()
+     15 d = {}
+---> 16 return d['key']
+
+KeyError: 'key'
+
+During handling of the above exception, another exception occurred:
+
+Exception                                 Traceback (most recent call last)
+Cell In[3], line 1
+----> 1 foo()
+
+Cell In[2], line 2, in foo()
+      1 def foo():
+----> 2     return bar()
+
+Cell In[2], line 5, in bar()
+      4 def bar():
+----> 5     return baz()
+
+Cell In[2], line 11, in baz()
+      9     qux()
+     10 except KeyError as e:
+---> 11     raise Exception
+     12 return qux()
+
+Exception: 
+```
